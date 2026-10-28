@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7fb">
+    <title>{% block title %}Classwise — Student performance insights{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav container" aria-label="Main navigation">
+            <a class="brand" href="{{ url_for('index') }}" aria-label="Classwise home">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 32 32" fill="none">
+                        <path d="M4 12.5 16 6l12 6.5L16 19 4 12.5Z" fill="currentColor"/>
+                        <path d="M9 15.4v6.2c4.2 3.2 9.8 3.2 14 0v-6.2l-7 3.8-7-3.8Z" fill="currentColor" opacity=".72"/>
+                        <path d="M27.5 13v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </span>
+                <span>classwise<span class="brand-period">.</span></span>
+            </a>
+            <div class="nav-links">
+                <a class="nav-link" href="{{ url_for('index') }}">Overview</a>
+                <a class="button button-small button-dark" href="{{ url_for('predict_datapoint') }}">
+                    Try the predictor <span aria-hidden="true">→</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <a class="brand footer-brand" href="{{ url_for('index') }}">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 32 32" fill="none">
+                        <path d="M4 12.5 16 6l12 6.5L16 19 4 12.5Z" fill="currentColor"/>
+                        <path d="M9 15.4v6.2c4.2 3.2 9.8 3.2 14 0v-6.2l-7 3.8-7-3.8Z" fill="currentColor" opacity=".72"/>
+                        <path d="M27.5 13v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </span>
+                <span>classwise<span class="brand-period">.</span></span>
+            </a>
+            <p>A student performance prediction project.</p>
+        </div>
+    </footer>
+</body>
+</html>

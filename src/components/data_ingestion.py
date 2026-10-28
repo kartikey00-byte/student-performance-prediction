@@ -22,9 +22,6 @@ class DataIngestion:
         logging.info("Entered the data ingestion method or component")
         try:
             df = pd.read_csv('notebook\\data\\stud.csv')
-            if 'average score' not in df.columns:
-                score_columns = ['math score', 'reading score', 'writing score']
-                df['average score'] = df[score_columns].mean(axis=1)
             logging.info("Read the dataset as dataframe")
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path), exist_ok=True)

@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block title %}Classwise — Math score prediction{% endblock %}
+
+{% block content %}
+<section class="hero container">
+    <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> A clearer view of student performance</div>
+        <h1>See the potential in every <span>math score.</span></h1>
+        <p class="hero-description">
+            Use reading and writing scores alongside learning context to get a
+            data-informed estimate of a student's math performance.
+        </p>
+        <div class="hero-actions">
+            <a class="button button-primary" href="{{ url_for('predict_datapoint') }}">
+                Make a prediction <span aria-hidden="true">→</span>
+            </a>
+            <span class="action-note"><span class="sparkle" aria-hidden="true">✦</span> Takes less than a minute</span>
+        </div>
+        <div class="hero-proof">
+            <span class="proof-icon" aria-hidden="true">✓</span>
+            <span>Math score estimates based on reading, writing, and context</span>
+        </div>
+    </div>
+
+    <div class="hero-art" aria-label="Illustration of student score insights">
+        <div class="art-orbit orbit-one"></div>
+        <div class="art-orbit orbit-two"></div>
+        <div class="insight-card">
+            <div class="insight-top">
+                <div>
+                    <span class="card-kicker">ILLUSTRATIVE SNAPSHOT</span>
+                    <h2>Progress, at a glance</h2>
+                </div>
+                <span class="card-menu" aria-hidden="true">•••</span>
+            </div>
+            <div class="score-highlight">
+                <div>
+                    <span class="score-label">Predicted math score</span>
+                    <div class="score-number">84<span>/100</span></div>
+                </div>
+                <span class="score-trend" aria-label="Illustrative score">↗</span>
+            </div>
+            <div class="chart" aria-hidden="true">
+                <div class="chart-grid"></div>
+                <div class="chart-bars">
+                    <div class="chart-column"><span class="bar bar-math"></span><span class="bar-label">Math</span></div>
+                    <div class="chart-column"><span class="bar bar-reading"></span><span class="bar-label">Reading</span></div>
+                    <div class="chart-column"><span class="bar bar-writing"></span><span class="bar-label">Writing</span></div>
+                </div>
+            </div>
+            <div class="insight-note">
+                <span class="note-icon" aria-hidden="true">✦</span>
+                <span>Reading, writing, and context at a glance.</span>
+            </div>
+        </div>
+        <div class="floating-tag tag-subjects">
+            <span class="tag-icon tag-icon-blue" aria-hidden="true">↗</span>
+            <span><strong>3 subjects</strong><small>in one snapshot</small></span>
+        </div>
+        <div class="floating-tag tag-context">
+            <span class="tag-icon tag-icon-green" aria-hidden="true">✓</span>
+            <span><strong>More context</strong><small>beyond the numbers</small></span>
+        </div>
+        <div class="art-sparkle sparkle-one" aria-hidden="true">✳</div>
+        <div class="art-sparkle sparkle-two" aria-hidden="true">✦</div>
+    </div>
+</section>
+
+<section class="steps-section">
+    <div class="container">
+        <div class="section-heading">
+            <span class="eyebrow">HOW IT WORKS</span>
+            <h2>A small snapshot. A useful perspective.</h2>
+            <p>Share a few details to get an estimate from the trained prediction model.</p>
+        </div>
+        <div class="steps-grid">
+            <article class="step-card">
+                <span class="step-number">01</span>
+                <div class="step-icon step-icon-blue" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M5 5.5h14A1.5 1.5 0 0 1 20.5 7v10a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 17V7A1.5 1.5 0 0 1 5 5.5Z" stroke="currentColor" stroke-width="1.7"/><path d="M7.5 9h9M7.5 12h5M7.5 15h7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+                </div>
+                <h3>Add the scores</h3>
+                <p>Enter reading and writing scores from 0 to 100.</p>
+            </article>
+            <article class="step-card">
+                <span class="step-number">02</span>
+                <div class="step-icon step-icon-violet" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 3.5 14.2 9l5.8.4-4.4 3.8 1.4 5.6-5-3-5 3 1.4-5.6L4 9.4 9.8 9 12 3.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+                </div>
+                <h3>Add the context</h3>
+                <p>Include a few learning and student background details.</p>
+            </article>
+            <article class="step-card">
+                <span class="step-number">03</span>
+                <div class="step-icon step-icon-green" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M4 18.5V12m5 6.5V8m5 10.5V5m5 13.5v-9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="m3.5 9 5-4 5 2 6-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <h3>See an estimate</h3>
+                <p>Get a quick math score estimate to support reflection.</p>
+            </article>
+        </div>
+        <div class="section-cta">
+            <div>
+                <h3>Ready to explore a student snapshot?</h3>
+                <p>Your inputs are used to estimate math performance, not to label a student.</p>
+            </div>
+            <a class="button button-dark" href="{{ url_for('predict_datapoint') }}">Start a prediction <span aria-hidden="true">→</span></a>
+        </div>
+    </div>
+</section>
+{% endblock %}
